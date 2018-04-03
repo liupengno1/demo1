@@ -1,4 +1,4 @@
-package com.liupeng.demo;
+package com.liupeng.generator.demo;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
