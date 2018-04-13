@@ -14,8 +14,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.joinway.framework.extension.utils.NumberUtils;
-import com.joinway.yilian.generator.dao.bean.DBConfig;
-import com.joinway.yilian.generator.dao.bean.TableMetaData;
+import com.liupeng.generator.demo.bean.DBConfig;
+import com.liupeng.generator.demo.bean.TableMetaData;
+
 
 public abstract class AbstractBuilder {
 
@@ -23,7 +24,7 @@ public abstract class AbstractBuilder {
 	
 	private static final Map<String, String> DATA_TYPE_MAP = new HashMap<>();
 	
-	protected static final String APP_NAME = "yilian";
+	protected static final String APP_NAME = "liup";
 	
 	protected abstract DBConfig getDBConfig();
 	
@@ -89,7 +90,7 @@ public abstract class AbstractBuilder {
 			TableMetaData data = new TableMetaData();
 			
 			data.setColumnName(rs.getString("COLUMN_NAME"));
-			data.setComment(StringUtils.trimToEmpty(rs.getString("COLUMN_COMMENT")));
+			data.setComment(StringUtils.trimToEmpty(rs.getString("COLUMN_COMMENT") ));
 			data.setDataType(rs.getString("DATA_TYPE").toLowerCase());
 			data.setPrimaryKey("PRI".equalsIgnoreCase(rs.getString("COLUMN_KEY")));
 			
